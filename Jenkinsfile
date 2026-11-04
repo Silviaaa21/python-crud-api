@@ -40,13 +40,12 @@ pipeline {
             }
         }
 
-        stage('Health Check') {
-            steps {
-                sh '''
-                    sleep 5
-                    curl -f http://localhost:5000/health
-                '''
-            }
+       stage('Health Check') {
+    steps {
+        sleep 5
+        curl -f http://host.docker.internal:5000/health
+    }
+}
         }
     }
 }
