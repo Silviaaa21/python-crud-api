@@ -40,10 +40,10 @@ pipeline {
             }
         }
 
-       stage('Health Check') {
+stage('Health Check') {
     steps {
-        sleep 5
-        curl -f http://host.docker.internal:5000/health
+        sleep(time: 5, unit: 'SECONDS')
+        sh 'curl -f http://host.docker.internal:5000/health'
     }
 }
         }
